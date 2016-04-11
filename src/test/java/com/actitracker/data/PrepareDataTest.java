@@ -23,7 +23,8 @@ public class PrepareDataTest {
   public void init() {
 
     SparkConf conf = new SparkConf().setAppName("test extract feature")
-        .setMaster("local[*]");
+        .setMaster("local[*]")
+        .set("spark.driver.allowMultipleContexts", "true");
 
     sc = new JavaSparkContext(conf);
 

@@ -15,7 +15,8 @@ public class PredictActivity {
     SparkConf sparkConf = new SparkConf()
         .setAppName("User's physical activity recognition")
         .set("spark.cassandra.connection.host", "127.0.0.1")
-        .setMaster("local[*]");
+        .setMaster("local[*]")
+        .set("spark.driver.allowMultipleContexts", "true");;
 
     JavaSparkContext sc = new JavaSparkContext(sparkConf);
 

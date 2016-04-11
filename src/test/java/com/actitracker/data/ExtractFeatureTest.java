@@ -18,7 +18,8 @@ public class ExtractFeatureTest {
   @Before
   public void init() {
     SparkConf conf = new SparkConf().setAppName("test extract feature")
-        .setMaster("local[*]");
+        .setMaster("local[*]")
+        .set("spark.driver.allowMultipleContexts", "true");;
 
     JavaSparkContext sc = new JavaSparkContext(conf);
 
